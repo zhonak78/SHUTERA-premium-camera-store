@@ -1,4 +1,11 @@
-import { type ReactNode, useEffect, useMemo, useState } from 'react';
+import {
+  createContext,
+  type ReactNode,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
@@ -24,6 +31,7 @@ import {
   Switch,
   Router as WouterRouter,
   useLocation,
+  useParams,
 } from 'wouter';
 
 const queryClient = new QueryClient();
@@ -35,6 +43,7 @@ type Product = {
   description: string;
   price: string;
   category: string;
+  group: string;
   image?: string;
   tone: string;
   tag?: string;
@@ -42,37 +51,194 @@ type Product = {
 
 const products: Product[] = [
   {
-    id: 's1',
-    name: 'S1 / 35 mm',
-    eyebrow: 'Bezzrkadlovka',
-    description: 'Ticho, ktoré vidí všetko.',
-    price: '2 490 €',
+    id: 'alpha1',
+    name: 'SHUTERA α1',
+    eyebrow: 'Fotoaparát',
+    description: 'Čistý prvý záber, každý deň.',
+    price: '449 €',
     category: 'Fotoaparáty',
+    group: 'Fotoaparáty s kvalitnými uzávierkami',
+    tone: 'ice',
+    tag: 'Dostupný vstup',
+  },
+  {
+    id: 's1',
+    name: 'SHUTERA S1',
+    eyebrow: 'Fotoaparát',
+    description: 'Ticho, ktoré vidí všetko.',
+    price: '999 €',
+    category: 'Fotoaparáty',
+    group: 'Fotoaparáty s kvalitnými uzávierkami',
     image: '/shutera-hero.png',
     tone: 'ice',
     tag: 'Novinka',
   },
   {
-    id: 'v4',
-    name: 'V4 / Cinema',
+    id: 'p1',
+    name: 'SHUTERA P1',
+    eyebrow: 'Fotoaparát',
+    description: 'Presnosť v kompaktnom tele.',
+    price: '669 €',
+    category: 'Fotoaparáty',
+    group: 'Fotoaparáty s kvalitnými uzávierkami',
+    tone: 'midnight',
+    tag: 'Novinka',
+  },
+  {
+    id: 'x1',
+    name: 'SHUTERA X1',
+    eyebrow: 'Profesionálny fotoaparát',
+    description: 'Nástroj pre scény, ktoré nemajú druhý pokus.',
+    price: '1 499 €',
+    category: 'Profesionálne fotoaparáty',
+    group: 'Profesionálne fotoaparáty',
+    tone: 'midnight',
+    tag: 'Pro systém',
+  },
+  {
+    id: 'z1',
+    name: 'SHUTERA Z1',
+    eyebrow: 'Profesionálny fotoaparát',
+    description: 'Dlhý deň. Jediný presný moment.',
+    price: '1 299 €',
+    category: 'Profesionálne fotoaparáty',
+    group: 'Profesionálne fotoaparáty',
+    tone: 'slate',
+  },
+  {
+    id: 'v1',
+    name: 'SHUTERA V1',
     eyebrow: 'Videokamera',
     description: 'Pohyb bez kompromisov.',
-    price: '3 890 €',
+    price: '2 199 €',
     category: 'Videokamery',
+    group: 'Videokamery',
     tone: 'midnight',
     tag: 'Pre film',
   },
   {
-    id: 'l85',
-    name: 'L85 / 1.4',
-    eyebrow: 'Portrétny objektív',
+    id: 'v1-pro',
+    name: 'SHUTERA V1 PRO',
+    eyebrow: 'Videokamera',
+    description: 'Kino v každom svetle.',
+    price: '2 999 €',
+    category: 'Videokamery',
+    group: 'Videokamery',
+    tone: 'ice',
+    tag: 'Pro systém',
+  },
+  {
+    id: 'tripods',
+    name: 'Statívy',
+    eyebrow: 'Príslušenstvo',
+    description: 'Stabilita, ktorú cítite v obraze.',
+    price: '189 €',
+    category: 'Príslušenstvo',
+    group: 'Príslušenstvo',
+    tone: 'slate',
+  },
+  {
+    id: 'bags',
+    name: 'Tašky a batohy',
+    eyebrow: 'Príslušenstvo',
+    description: 'Premyslený priestor pre vašu zostavu.',
+    price: '149 €',
+    category: 'Príslušenstvo',
+    group: 'Príslušenstvo',
+    tone: 'midnight',
+  },
+  {
+    id: 'lenses',
+    name: 'Objektívy',
+    eyebrow: 'Príslušenstvo',
     description: 'Svetlo v presnom bode.',
-    price: '1 190 €',
-    category: 'Objektívy',
+    price: '599 €',
+    category: 'Príslušenstvo',
+    group: 'Príslušenstvo',
     image: '/shutera-lens.png',
     tone: 'slate',
   },
+  {
+    id: 'cards',
+    name: 'Pamäťové karty',
+    eyebrow: 'Príslušenstvo',
+    description: 'Každý frame bezpečne uložený.',
+    price: '79 €',
+    category: 'Príslušenstvo',
+    group: 'Príslušenstvo',
+    tone: 'ice',
+  },
+  {
+    id: 'drives',
+    name: 'Externé disky',
+    eyebrow: 'Príslušenstvo',
+    description: 'Vaše zábery. V bezpečí a poriadku.',
+    price: '239 €',
+    category: 'Príslušenstvo',
+    group: 'Príslušenstvo',
+    tone: 'midnight',
+  },
+  {
+    id: 'batteries',
+    name: 'Batérie',
+    eyebrow: 'Príslušenstvo',
+    description: 'Viac energie pre dlhší príbeh.',
+    price: '69 €',
+    category: 'Príslušenstvo',
+    group: 'Príslušenstvo',
+    tone: 'slate',
+  },
+  {
+    id: 'chargers',
+    name: 'Nabíjačky',
+    eyebrow: 'Príslušenstvo',
+    description: 'Pripravené skôr, než príde moment.',
+    price: '89 €',
+    category: 'Príslušenstvo',
+    group: 'Príslušenstvo',
+    tone: 'ice',
+  },
 ];
+
+const categoryNav = [
+  'Fotoaparáty',
+  'Profesionálne fotoaparáty',
+  'Videokamery',
+  'Príslušenstvo',
+] as const;
+
+const detailSections = [
+  ['Hlavné vlastnosti', 'Všetko dôležité zostáva na dosah ruky.'],
+  ['Technické parametre', 'Senzor, rýchlosť a výdrž navrhnuté pre váš rytmus.'],
+  ['Dizajn', 'Každá hrana má svoj dôvod. Každý povrch svoj dotyk.'],
+  ['Uzávierka', 'Tichá, presná a pripravená na rozhodujúci okamih.'],
+  ['Obrazová kvalita', 'Prirodzené svetlo, jemné detaily a čistá kresba.'],
+] as const;
+
+type CartContextValue = {
+  cart: string[];
+  addItem: (id: string) => void;
+  removeItem: (index: number) => void;
+};
+
+const CartContext = createContext<CartContextValue | null>(null);
+
+function useCart() {
+  const context = useContext(CartContext);
+  if (!context) throw new Error('Košík musí byť použitý v CartProvider');
+  return context;
+}
+
+function CartProvider({ children }: { children: ReactNode }) {
+  const [cart, setCart] = useState<string[]>([]);
+  const value = {
+    cart,
+    addItem: (id: string) => setCart((current) => [...current, id]),
+    removeItem: (index: number) =>
+      setCart((current) => current.filter((_, itemIndex) => itemIndex !== index)),
+  };
+  return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
+}
 
 function Home() {
   const [searchOpen, setSearchOpen] = useState(false);
@@ -80,9 +246,10 @@ function Home() {
   const [cartOpen, setCartOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [query, setQuery] = useState('');
-  const [cart, setCart] = useState<string[]>([]);
   const [selectedCategory, setSelectedCategory] = useState('Všetko');
   const [notice, setNotice] = useState('');
+  const [, setLocation] = useLocation();
+  const { cart, addItem, removeItem } = useCart();
 
   const filteredProducts = useMemo(() => {
     const byCategory =
@@ -90,7 +257,7 @@ function Home() {
         ? products
         : products.filter((product) => product.category === selectedCategory);
     if (!query.trim()) return byCategory;
-    return byCategory.filter((product) =>
+    return products.filter((product) =>
       `${product.name} ${product.eyebrow} ${product.description}`
         .toLowerCase()
         .includes(query.toLowerCase()),
@@ -98,7 +265,7 @@ function Home() {
   }, [query, selectedCategory]);
 
   const addToCart = (product: Product) => {
-    setCart((current) => [...current, product.id]);
+    addItem(product.id);
     setNotice(`${product.name} je v košíku`);
     setCartOpen(true);
     window.setTimeout(() => setNotice(''), 2600);
@@ -107,6 +274,10 @@ function Home() {
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     setMenuOpen(false);
+  };
+
+  const openProduct = (product: Product) => {
+    setLocation(`/produkt/${product.id}`);
   };
 
   useEffect(() => {
@@ -146,7 +317,7 @@ function Home() {
               ['Fotoaparáty', 'products'],
               ['Videokamery', 'products'],
               ['Objektívy', 'products'],
-              ['Príslušenstvo', 'club'],
+              ['Príslušenstvo', 'products'],
               ['SHUTERA CLUB', 'club'],
               ['Predajňe', 'stores'],
             ].map(([label, target]) => (
@@ -254,7 +425,7 @@ function Home() {
             onClick={() => scrollTo('products')}
             aria-label="Prejsť na produkty"
           >
-            <span className="mono-font">SCROLL TO EXPLORE</span>
+            <span className="mono-font">POSUŇTE PRE OBJAVENIE</span>
             <ArrowDown size={15} />
           </button>
         </section>
@@ -268,55 +439,90 @@ function Home() {
               </div>
               <p className="section-intro">Vybrané systémy pre obraz, ktorý má zostať. Navrhnuté v Bratislave, pripravené na svetlo kdekoľvek.</p>
             </div>
-            <div className="filter-row">
-              {['Všetko', 'Fotoaparáty', 'Videokamery', 'Objektívy'].map((filter) => (
+            <div className="catalog-nav" aria-label="Kategórie produktov">
+              <button type="button" data-testid="button-category-all" className={`catalog-nav-item ${selectedCategory === 'Všetko' ? 'is-active' : ''}`} onClick={() => { setSelectedCategory('Všetko'); scrollTo('products'); }}>
+                Všetko
+              </button>
+              {categoryNav.map((filter) => (
                 <button
                   type="button"
-                  data-testid={`button-filter-${filter.toLowerCase()}`}
+                  data-testid={`button-category-${filter.toLowerCase().replaceAll(' ', '-')}`}
                   key={filter}
-                  className={`filter-pill ${selectedCategory === filter ? 'is-active' : ''}`}
-                  onClick={() => setSelectedCategory(filter)}
+                  className={`catalog-nav-item ${selectedCategory === filter ? 'is-active' : ''}`}
+                  onClick={() => { setSelectedCategory(filter); scrollTo(`category-${filter}`); }}
                 >
                   {filter}
                 </button>
               ))}
-              <span className="filter-count mono-font">{filteredProducts.length.toString().padStart(2, '0')} položky</span>
+              <span className="filter-count mono-font">{filteredProducts.length.toString().padStart(2, '0')} produkty</span>
             </div>
-            <div className="product-grid">
-              {filteredProducts.map((product, index) => (
-                <article className={`product-card product-${index + 1} tone-${product.tone}`} key={product.id} data-testid={`card-product-${product.id}`}>
-                  <div className="product-art">
-                    {product.image ? (
-                      <img src={product.image} alt={product.name} />
-                    ) : (
-                      <div className={`abstract-camera abstract-${product.id}`} aria-hidden="true">
-                        <div className="abstract-body" />
-                        <div className="abstract-lens"><span /></div>
-                        <div className="abstract-screen" />
-                      </div>
-                    )}
-                    <span className="product-index mono-font">0{index + 1}</span>
-                    {product.tag && <span className="product-tag">{product.tag}</span>}
-                    <button
-                      type="button"
-                      data-testid={`button-quick-add-${product.id}`}
-                      className="quick-add"
-                      aria-label={`Pridať ${product.name} do košíka`}
-                      onClick={() => addToCart(product)}
-                    >
-                      <Plus size={18} />
-                    </button>
-                  </div>
-                  <div className="product-info">
-                    <div>
-                      <span className="product-eyebrow">{product.eyebrow}</span>
-                      <h3 className="display-font">{product.name}</h3>
-                      <p>{product.description}</p>
+            <div className="catalog-groups">
+              {[
+                'Fotoaparáty s kvalitnými uzávierkami',
+                'Profesionálne fotoaparáty',
+                'Videokamery',
+                'Príslušenstvo',
+              ].map((group, groupIndex) => {
+                const groupProducts = filteredProducts.filter((product) => product.group === group);
+                if (groupProducts.length === 0) return null;
+                return (
+                  <section className="catalog-group" id={`category-${group === 'Fotoaparáty s kvalitnými uzávierkami' ? 'Fotoaparáty' : group}`} key={group}>
+                    <div className="group-heading">
+                      <span className="section-kicker">Kolekcia / 0{groupIndex + 1}</span>
+                      <h3 className="display-font">{group}</h3>
+                      <span className="mono-font group-count">{groupProducts.length.toString().padStart(2, '0')}</span>
                     </div>
-                    <strong>{product.price}</strong>
-                  </div>
-                </article>
-              ))}
+                    <div className={`product-grid ${groupProducts.length === 2 ? 'two-up' : ''}`}>
+                      {groupProducts.map((product, index) => (
+                        <article
+                          className={`product-card product-${index + 1} tone-${product.tone}`}
+                          key={product.id}
+                          data-testid={`card-product-${product.id}`}
+                          role="link"
+                          tabIndex={0}
+                          onClick={() => openProduct(product)}
+                          onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') openProduct(product); }}
+                        >
+                          <div className="product-art">
+                            {product.image ? (
+                              <img src={product.image} alt={product.name} />
+                            ) : (
+                              <div className={`abstract-camera abstract-${product.id}`} aria-hidden="true">
+                                <div className="abstract-body" />
+                                <div className="abstract-lens"><span /></div>
+                                <div className="abstract-screen" />
+                              </div>
+                            )}
+                            <span className="product-index mono-font">{(index + 1).toString().padStart(2, '0')}</span>
+                            {product.tag && <span className="product-tag">{product.tag}</span>}
+                            <button
+                              type="button"
+                              data-testid={`button-quick-add-${product.id}`}
+                              className="quick-add"
+                              aria-label={`Pridať ${product.name} do košíka`}
+                              onClick={(event) => { event.stopPropagation(); addToCart(product); }}
+                            >
+                              <Plus size={18} />
+                            </button>
+                          </div>
+                          <div className="product-info">
+                            <div>
+                              <span className="product-eyebrow">{product.eyebrow}</span>
+                              <h3 className="display-font">{product.name}</h3>
+                              <p>{product.description}</p>
+                            </div>
+                            <strong>{product.price}</strong>
+                          </div>
+                          <div className="product-actions">
+                            <button type="button" data-testid={`button-detail-${product.id}`} onClick={(event) => { event.stopPropagation(); openProduct(product); }}>Zistiť viac <ArrowRight size={14} /></button>
+                            <button type="button" data-testid={`button-buy-${product.id}`} onClick={(event) => { event.stopPropagation(); addToCart(product); }}>Kúpiť <ShoppingBag size={14} /></button>
+                          </div>
+                        </article>
+                      ))}
+                    </div>
+                  </section>
+                );
+              })}
             </div>
             <div className="catalog-link-row">
               <button type="button" data-testid="button-full-catalog" onClick={() => setNotice('Celý katalóg pripravujeme')} className="text-cta">
@@ -346,7 +552,7 @@ function Home() {
               <div className="story-circle"><span>SH</span></div>
               <div className="story-panel-bottom">
                 <span>Precízne vnútri.</span>
-                <span className="mono-font">MADE IN SLOVAKIA</span>
+                <span className="mono-font">VYROBENÉ NA SLOVENSKU</span>
               </div>
             </div>
           </div>
@@ -430,8 +636,8 @@ function Home() {
           <div className="search-input-wrap"><Search size={20} /><input autoFocus data-testid="input-search" type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Čo hľadáte?" /></div>
           <div className="search-results">
             {query && filteredProducts.length === 0 && <p className="empty-result">Nič sme nenašli. Skúste iný výraz.</p>}
-            {query && filteredProducts.map((product) => <button type="button" data-testid={`button-search-result-${product.id}`} key={product.id} onClick={() => { setSearchOpen(false); scrollTo('products'); }}><span>{product.name}</span><ArrowRight size={15} /></button>)}
-            {!query && <><span className="result-label">Skúste napríklad</span><button type="button" data-testid="button-search-s1" onClick={() => setQuery('S1')}>S1 / 35 mm <ArrowRight size={15} /></button><button type="button" data-testid="button-search-club" onClick={() => { setSearchOpen(false); scrollTo('club'); }}>SHUTERA CLUB <ArrowRight size={15} /></button></>}
+            {query && filteredProducts.map((product) => <button type="button" data-testid={`button-search-result-${product.id}`} key={product.id} onClick={() => { setSearchOpen(false); setLocation(`/produkt/${product.id}`); }}><span>{product.name}</span><ArrowRight size={15} /></button>)}
+            {!query && <><span className="result-label">Skúste napríklad</span><button type="button" data-testid="button-search-s1" onClick={() => setQuery('S1')}>SHUTERA S1 <ArrowRight size={15} /></button><button type="button" data-testid="button-search-club" onClick={() => { setSearchOpen(false); scrollTo('club'); }}>SHUTERA CLUB <ArrowRight size={15} /></button></>}
           </div>
         </aside>
       )}
@@ -451,11 +657,116 @@ function Home() {
           {cartItems.length === 0 ? (
             <div className="cart-empty"><ShoppingBag size={37} strokeWidth={1.2} /><h2 className="display-font">Zatiaľ je prázdny.</h2><p>Vyberte si nástroj, ktorý vás vezme ďalej.</p><button type="button" data-testid="button-empty-explore" className="primary-cta" onClick={() => { setCartOpen(false); scrollTo('products'); }}>Objaviť kolekciu <ArrowRight size={17} /></button></div>
           ) : (
-            <><div className="cart-list">{cartItems.map((product, index) => <div className="cart-item" key={`${product.id}-${index}`}><div className={`cart-thumb tone-${product.tone}`}>{product.image && <img src={product.image} alt="" />}</div><div><strong>{product.name}</strong><span>{product.price}</span></div><button type="button" data-testid={`button-remove-${product.id}-${index}`} aria-label={`Odstrániť ${product.name}`} onClick={() => setCart((current) => current.filter((_, itemIndex) => itemIndex !== index))}><Minus size={14} /></button></div>)}</div><div className="cart-summary"><span>Medzisúčet</span><strong>{cartItems.reduce((total, product) => total + Number(product.price.replace(/\s|€/g, '').replace(',', '.')), 0).toLocaleString('sk-SK')} €</strong><button type="button" data-testid="button-checkout" className="primary-cta full-width" onClick={() => setNotice('Pokladňa bude dostupná čoskoro')}>Pokračovať k objednávke <ArrowRight size={17} /></button></div></>
+             <><div className="cart-list">{cartItems.map((product, index) => <div className="cart-item" key={`${product.id}-${index}`}><div className={`cart-thumb tone-${product.tone}`}>{product.image && <img src={product.image} alt="" />}</div><div><strong>{product.name}</strong><span>{product.price}</span></div><button type="button" data-testid={`button-remove-${product.id}-${index}`} aria-label={`Odstrániť ${product.name}`} onClick={() => removeItem(index)}><Minus size={14} /></button></div>)}</div><div className="cart-summary"><span>Medzisúčet</span><strong>{cartItems.reduce((total, product) => total + Number(product.price.replace(/\s|€/g, '').replace(',', '.')), 0).toLocaleString('sk-SK')} €</strong><button type="button" data-testid="button-checkout" className="primary-cta full-width" onClick={() => setNotice('Pokladňa bude dostupná čoskoro')}>Pokračovať k objednávke <ArrowRight size={17} /></button></div></>
           )}
         </aside>
       )}
       {notice && <div className="toast-notice" role="status" data-testid="status-notice"><Check size={16} /> {notice}</div>}
+    </div>
+  );
+}
+
+function ProductDetail() {
+  const { id } = useParams<{ id: string }>();
+  const product = products.find((item) => item.id === id);
+  const [, setLocation] = useLocation();
+  const { addItem } = useCart();
+  const [notice, setNotice] = useState('');
+
+  if (!product) return <NotFound />;
+
+  const addProduct = () => {
+    addItem(product.id);
+    setNotice(`${product.name} je v košíku`);
+    window.setTimeout(() => setNotice(''), 2600);
+  };
+
+  return (
+    <div className="noise product-detail-page min-h-[100dvh] bg-[#f5f8fa] text-[#1d252e]">
+      <header className="detail-header">
+        <button type="button" data-testid="button-detail-logo" className="display-font detail-logo" onClick={() => setLocation('/')}>SHUTERA<span>.</span></button>
+        <div className="detail-header-actions">
+          <button type="button" data-testid="button-detail-catalog" className="detail-back" onClick={() => setLocation('/')}>← Späť na katalóg</button>
+          <button type="button" data-testid="button-detail-cart" className="detail-bag" onClick={() => setLocation('/')}>Košík <ShoppingBag size={16} /></button>
+        </div>
+      </header>
+      <main>
+        <section className="detail-hero">
+          <div className="detail-visual-wrap">
+            <div className={`detail-visual tone-${product.tone}`}>
+              {product.image ? (
+                <img src={product.image} alt={product.name} />
+              ) : (
+                <div className={`abstract-camera abstract-${product.id}`} aria-hidden="true">
+                  <div className="abstract-body" />
+                  <div className="abstract-lens"><span /></div>
+                  <div className="abstract-screen" />
+                </div>
+              )}
+              <span className="detail-visual-code mono-font">SH / {product.id.toUpperCase()}</span>
+              <span className="detail-visual-mark">SH</span>
+            </div>
+            <div className="detail-visual-meta"><span>PRODUKT / 2024</span><span className="mono-font">01 — 01</span></div>
+          </div>
+          <div className="detail-hero-copy">
+            <span className="section-kicker">{product.eyebrow} / SHUTERA</span>
+            <h1 className="display-font">{product.name}</h1>
+            <p className="detail-lead">Objavte {product.name}</p>
+            <p className="detail-description">{product.description} Precízny nástroj pre obraz, ktorý má zostať s vami aj po tom, čo okamih prejde.</p>
+            <div className="detail-purchase">
+              <strong>{product.price}</strong>
+              <button type="button" data-testid={`button-detail-buy-${product.id}`} className="primary-cta" onClick={addProduct}>Kúpiť <ShoppingBag size={16} /></button>
+            </div>
+            <div className="detail-delivery"><Check size={15} /> Dostupné online <span /> Bezpečná doprava na Slovensko</div>
+          </div>
+        </section>
+
+        <section className="detail-overview">
+          <div className="detail-overview-heading">
+            <span className="section-kicker">V centre pozornosti</span>
+            <h2 className="display-font">Presný nástroj.<br /><em>Správny pocit.</em></h2>
+          </div>
+          <div className="detail-feature-list">
+            {detailSections.map(([title, copy], index) => (
+              <div className="detail-feature" key={title}>
+                <span className="mono-font">0{index + 1}</span>
+                <div><h3 className="display-font">{title}</h3><p>{copy}</p></div>
+                <ArrowRight size={17} />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="detail-gallery">
+          <div className="detail-gallery-intro">
+            <span className="section-kicker">Galéria</span>
+            <h2 className="display-font">Váš pohľad,<br /><em>vaše pravidlá.</em></h2>
+          </div>
+          <div className="gallery-frame gallery-frame-large"><div className={`gallery-art gallery-${product.tone}`}><span className="mono-font">{product.name} / 01</span></div></div>
+          <div className="gallery-frame gallery-frame-small"><div className={`gallery-art gallery-${product.tone} alt`}><span className="mono-font">DETAIL / 02</span></div></div>
+        </section>
+
+        <section className="detail-comparison">
+          <div><span className="section-kicker">Porovnanie</span><h2 className="display-font">Nájdite svoj<br /><em>ďalší záber.</em></h2></div>
+          <div className="comparison-row">
+            {products.filter((item) => item.category === product.category && item.id !== product.id).slice(0, 2).map((other) => (
+              <button type="button" data-testid={`button-compare-${other.id}`} className="comparison-item" key={other.id} onClick={() => setLocation(`/produkt/${other.id}`)}>
+                <span className={`comparison-dot tone-${other.tone}`} />
+                <span><strong>{other.name}</strong><small>{other.price}</small></span>
+                <ArrowRight size={16} />
+              </button>
+            ))}
+            {products.filter((item) => item.category === product.category && item.id !== product.id).length === 0 && <p className="comparison-empty">Ďalšie modely pre túto kategóriu pripravujeme.</p>}
+          </div>
+        </section>
+        <section className="detail-bottom-cta">
+          <span className="section-kicker">SHUTERA / {product.id.toUpperCase()}</span>
+          <h2 className="display-font">Pripravený na<br /><em>váš moment?</em></h2>
+          <button type="button" data-testid={`button-detail-bottom-buy-${product.id}`} className="primary-cta" onClick={addProduct}>Kúpiť {product.name} <ArrowRight size={17} /></button>
+        </section>
+      </main>
+      <footer className="site-footer detail-footer"><div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12"><div className="footer-bottom"><span>© 2024 SHUTERA, s.r.o.</span><button type="button" onClick={() => setLocation('/')} data-testid="button-detail-footer-back">Späť na katalóg</button><span>Slovensko / EUR</span></div></div></footer>
+      {notice && <div className="toast-notice" role="status" data-testid="status-detail-notice"><Check size={16} /> {notice}</div>}
     </div>
   );
 }
@@ -466,6 +777,7 @@ function Router() {
     // survives a page crash.
     <RoutedErrorBoundary>
       <Switch>
+        <Route path="/produkt/:id" component={ProductDetail} />
         <Route path="/" component={Home} />
         <Route component={NotFound} />
       </Switch>
@@ -483,7 +795,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
-          <Router />
+          <CartProvider><Router /></CartProvider>
         </WouterRouter>
         <Toaster />
       </TooltipProvider>

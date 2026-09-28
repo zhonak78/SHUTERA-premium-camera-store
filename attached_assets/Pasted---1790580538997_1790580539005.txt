@@ -1,0 +1,184 @@
+Да, теперь структура полностью понятна. Тебе нужно, чтобы **в каталоге сайта были именно твои категории и твои модели**, а внутри каждой категории — аккуратный список товаров, где на каждый товар можно нажать.
+
+Я бы дал AI вот такой готовый блок:
+
+---
+
+## PRODUCTS / PRODUKTY
+
+Create a premium SHUTERA product catalog inspired by the **clean product navigation and presentation of Apple**, but with a completely original SHUTERA design.
+
+At the top of the Products page, create a horizontal product navigation with categories:
+
+**Fotoaparáty**
+**Profesionálne fotoaparáty**
+**Videokamery**
+**Príslušenstvo**
+
+Each category is clickable.
+
+---
+
+### **Fotoaparáty s kvalitnými uzávierkami**
+
+Display the following products:
+
+**SHUTERA α1**
+**449 €**
+
+**SHUTERA S1**
+**999 €**
+
+**SHUTERA P1**
+**669 €**
+
+Each product must have:
+
+* a large product image
+* product name
+* price
+* clickable product card
+* **Zistiť viac**
+* **Kúpiť**
+
+Clicking a product opens its **own detailed product page**.
+
+---
+
+### **Profesionálne fotoaparáty**
+
+Display:
+
+**SHUTERA X1**
+**1 499 €**
+
+**SHUTERA Z1**
+**1 299 €**
+
+Each product must be clickable and have its own detailed product page.
+
+---
+
+### **Videokamery**
+
+Display:
+
+**SHUTERA V1**
+**2 199 €**
+
+**SHUTERA V1 PRO**
+**2 999 €**
+
+Each product must be clickable and have its own detailed product page.
+
+---
+
+### **Príslušenstvo**
+
+Create a separate product category for SHUTERA accessories.
+
+Include:
+
+**Statívy**
+**Tašky a batohy**
+**Objektívy**
+**Pamäťové karty**
+**Externé disky**
+**Batérie**
+**Nabíjačky**
+
+Each individual accessory must also be clickable and have its own product detail page.
+
+---
+
+## PRODUCT DETAIL PAGE
+
+When the visitor clicks any product, open a dedicated product page.
+
+For example:
+
+### **SHUTERA α1**
+
+**449 €**
+
+Large product image.
+
+**Objaviť SHUTERA α1**
+
+Then create sections:
+
+**Hlavné vlastnosti**
+
+**Technické parametre**
+
+**Dizajn**
+
+**Uzávierka**
+
+**Obrazová kvalita**
+
+**Galéria**
+
+**Porovnanie**
+
+Button:
+
+**Kúpiť**
+
+---
+
+### IMPORTANT
+
+The catalog must **not look like a traditional webshop with many small cards**.
+
+Use a premium, spacious layout:
+
+* large product images
+* lots of white space
+* large typography
+* minimal text
+* clean black/white design
+* subtle SHUTERA blue accents
+* smooth animations
+* horizontal product navigation
+* sticky category navigation
+* elegant hover effects
+
+**Every product must be clickable. Every product must have its own unique detail page.**
+
+The product catalog should feel like a **premium technology brand experience**, not a generic online store.
+
+---
+
+То есть на сайте визуально будет примерно:
+
+**Fotoaparáty s kvalitnými uzávierkami**
+
+`[ veľká fotka α1 ]`  `[ veľká fotka S1 ]`  `[ veľká fotka P1 ]`
+
+**SHUTERA α1**             **SHUTERA S1**             **SHUTERA P1**
+**449 €**                         **999 €**                        **669 €**
+
+↓ потом
+
+**Profesionálne fotoaparáty**
+
+`[ X1 ]`                         `[ Z1 ]`
+
+**SHUTERA X1**             **SHUTERA Z1**
+**1 499 €**                     **1 299 €**
+
+↓ потом
+
+**Videokamery**
+
+`[ V1 ]`                         `[ V1 PRO ]`
+
+**SHUTERA V1**             **SHUTERA V1 PRO**
+**2 199 €**                     **2 999 €**
+
+↓ потом
+
+**Príslušenstvo**
+
+И уже **каждая фотография/модель → отдельная полноценная страница товара**.
