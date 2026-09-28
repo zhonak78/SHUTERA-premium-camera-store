@@ -1,0 +1,633 @@
+Create the complete SHUTERA product catalog and individual product pages.
+
+IMPORTANT:
+The product specifications below are fictional specifications for the SHUTERA brand.
+Use exactly these products, prices and characteristics.
+
+The website should have a premium, minimalist technology aesthetic inspired by the product presentation of Apple, but with an original SHUTERA identity.
+
+==================================================
+FOTOAPARÁTY S KVALITNÝMI UZÁVIERKAMI
+==================================================
+
+These are hybrid cameras.
+
+IMPORTANT:
+These cameras are primarily presented as photography cameras, but THEY CAN ALSO RECORD VIDEO.
+
+Do not remove video functionality from these products.
+
+------------------------------------------
+SHUTERA α1
+449 €
+------------------------------------------
+
+Hlavné vlastnosti:
+- 24 MP Full Frame snímač
+- Precision Shutter
+- 5-osová stabilizácia obrazu
+- rýchle automatické zaostrovanie
+- 4K video
+- výklopný dotykový displej
+
+Technické parametre:
+- Snímač: Full Frame
+- Rozlíšenie: 24 MP
+- ISO: 100–25 600
+- Maximálna rýchlosť uzávierky: 1/4000 s
+- Video: 4K 60 fps
+- Displej: 3,0" dotykový
+- Hmotnosť: 520 g
+- Batéria: SHUTERA B1
+
+Uzávierka:
+Tichá a presná Precision Shutter pre spoľahlivé zachytenie každého okamihu.
+
+Obrazová kvalita:
+24 MP Full Frame snímač poskytuje detailné fotografie s prirodzenými farbami a čistým obrazom.
+
+Video:
+4K video pri 60 fps pre plynulé a detailné zábery.
+
+Stabilizácia:
+5-osová stabilizácia obrazu pomáha udržať fotografie aj video stabilné pri fotografovaní a natáčaní z ruky.
+
+Zaostrovanie:
+Rýchle automatické zaostrovanie pre presné zachytenie objektu.
+
+------------------------------------------
+SHUTERA S1
+999 €
+------------------------------------------
+
+Hlavné vlastnosti:
+- 30 MP Full Frame
+- Professional Precision Shutter
+- 5-osová stabilizácia
+- pokročilé automatické zaostrovanie
+- 4K video
+- 3,2" výklopný dotykový displej
+
+Technické parametre:
+- Snímač: Full Frame
+- Rozlíšenie: 30 MP
+- ISO: 100–51 200
+- Maximálna rýchlosť uzávierky: 1/8000 s
+- Video: 4K 60 fps
+- Displej: 3,2" dotykový
+- Hmotnosť: 680 g
+- Pamäť: 2× slot na pamäťovú kartu
+
+Uzávierka:
+Professional Precision Shutter navrhnutá pre rýchle a presné zachytenie okamihu.
+
+Obrazová kvalita:
+30 MP snímač zachováva jemné detaily a prirodzené prechody svetla.
+
+Video:
+4K 60 fps umožňuje vytvárať plynulé a detailné videá.
+
+Stabilizácia:
+5-osová stabilizácia pre fotografie aj video.
+
+Zaostrovanie:
+Pokročilý autofocus umožňuje presné sledovanie fotografovaného objektu.
+
+------------------------------------------
+SHUTERA P1
+669 €
+------------------------------------------
+
+Hlavné vlastnosti:
+- 26 MP APS-C snímač
+- Silent Shutter
+- 5-osová stabilizácia
+- rýchle automatické zaostrovanie
+- 4K video
+- kompaktné telo
+
+Technické parametre:
+- Snímač: APS-C
+- Rozlíšenie: 26 MP
+- ISO: 100–32 000
+- Maximálna rýchlosť uzávierky: 1/4000 s
+- Video: 4K 30 fps
+- Displej: 3,0"
+- Hmotnosť: 540 g
+
+Uzávierka:
+Tichá Silent Shutter umožňuje fotografovať diskrétne bez rušivého zvuku.
+
+Obrazová kvalita:
+Detailný obraz s prirodzenými farbami a dobrým výkonom pri slabom svetle.
+
+Video:
+4K 30 fps pre kvalitné každodenné videá.
+
+Dizajn:
+Kompaktné telo vhodné na každodenné fotografovanie a cestovanie.
+
+==================================================
+PROFESIONÁLNE FOTOAPARÁTY
+==================================================
+
+These are professional hybrid photography cameras.
+
+IMPORTANT:
+They CAN record video as well, but the main focus of their presentation must be PROFESSIONAL PHOTOGRAPHY.
+
+Do not present them as cinema cameras.
+
+------------------------------------------
+SHUTERA X1
+1 499 €
+------------------------------------------
+
+Hlavné vlastnosti:
+- 45 MP Full Frame
+- Professional Precision Shutter
+- 5-osová stabilizácia
+- profesionálny autofocus
+- 4K video
+- dvojitý slot na pamäťovú kartu
+
+Technické parametre:
+- Snímač: Full Frame
+- Rozlíšenie: 45 MP
+- ISO: 64–51 200
+- Maximálna rýchlosť uzávierky: 1/8000 s
+- Video: 4K 60 fps
+- Displej: 3,5" dotykový
+- Hmotnosť: 720 g
+- Pamäť: 2× slot
+
+Uzávierka:
+Profesionálna Precision Shutter poskytuje vysokú presnosť a rýchlu odozvu pri fotografovaní.
+
+Obrazová kvalita:
+45 MP snímač poskytuje vysokú úroveň detailov pre profesionálnu fotografiu.
+
+Autofokus:
+Pokročilý systém automatického zaostrovania je navrhnutý na presné sledovanie objektov.
+
+Stabilizácia:
+5-osová stabilizácia pre ostré fotografie pri fotografovaní z ruky.
+
+Video:
+4K 60 fps je dostupné ako doplnková funkcia, ale hlavnou funkciou fotoaparátu je profesionálna fotografia.
+
+------------------------------------------
+SHUTERA Z1
+1 299 €
+------------------------------------------
+
+Hlavné vlastnosti:
+- 36 MP Full Frame
+- Professional Shutter
+- 5-osová stabilizácia
+- profesionálny autofocus
+- 4K video
+- dvojitý slot na pamäťovú kartu
+
+Technické parametre:
+- Snímač: Full Frame
+- Rozlíšenie: 36 MP
+- ISO: 100–51 200
+- Maximálna rýchlosť uzávierky: 1/8000 s
+- Video: 4K 60 fps
+- Displej: 3,2" dotykový
+- Hmotnosť: 700 g
+
+Uzávierka:
+Rýchla a presná Professional Shutter pre náročné fotografovanie.
+
+Obrazová kvalita:
+36 MP poskytuje detailné fotografie s vysokou ostrosťou.
+
+Autofokus:
+Presné automatické zaostrovanie pre fotografovanie pohybujúcich sa objektov.
+
+Stabilizácia:
+5-osová stabilizácia pomáha udržať fotografie ostré pri fotografovaní z ruky.
+
+Video:
+4K 60 fps je dostupné ako doplnková funkcia.
+
+==================================================
+VIDEOKAMERY
+==================================================
+
+These are dedicated professional video cameras.
+
+The main focus must be professional video production.
+
+------------------------------------------
+SHUTERA V1
+2 199 €
+------------------------------------------
+
+Hlavné vlastnosti:
+- 6K video
+- 60 fps
+- Full Frame snímač
+- Cinema Shutter
+- 5-osová stabilizácia
+- profesionálny audio vstup
+
+Technické parametre:
+- Rozlíšenie: 6K
+- Maximálna frekvencia: 60 fps
+- Snímač: Full Frame
+- Stabilizácia: 5-osová
+- Displej: 3,5" otočný
+- Pamäť: 2× slot
+- Audio: profesionálne vstupy
+
+Video:
+6K obraz s vysokou úrovňou detailov pre profesionálnu tvorbu.
+
+Stabilizácia:
+5-osová stabilizácia pre plynulé zábery.
+
+Audio:
+Profesionálne audio vstupy pre externý mikrofón.
+
+Cinema Shutter:
+Presné snímanie pohybu pre prirodzene vyzerajúci filmový obraz.
+
+------------------------------------------
+SHUTERA V1 PRO
+2 999 €
+------------------------------------------
+
+Hlavné vlastnosti:
+- 8K video
+- 60 fps
+- Full Frame
+- Cinema Pro Shutter
+- 10-bit video
+- 5-osová stabilizácia
+- profesionálne audio
+
+Technické parametre:
+- Rozlíšenie: 8K
+- Maximálna frekvencia: 60 fps
+- Snímač: Full Frame
+- Farebná hĺbka: 10-bit
+- Stabilizácia: 5-osová
+- Pamäť: 2× slot
+- Audio: profesionálne vstupy
+
+Video:
+8K rozlíšenie poskytuje vysokú úroveň detailov pre filmovú a profesionálnu produkciu.
+
+Cinema Pro Shutter:
+Presné snímanie pohybu pre prirodzene vyzerajúci filmový obraz.
+
+10-bit:
+Širšie možnosti práce s farbami pri postprodukcii.
+
+==================================================
+OBJEKTÍVY
+==================================================
+
+IMPORTANT:
+Each lens must have its own characteristics.
+
+------------------------------------------
+SHUTERA 35mm F1.8
+249 €
+------------------------------------------
+
+Hlavné vlastnosti:
+- 35 mm
+- F1.8
+- Full Frame
+- autofocus
+
+Technické parametre:
+- Ohnisková vzdialenosť: 35 mm
+- Svetelnosť: F1.8
+- Minimálna zaostrovacia vzdialenosť: 0,30 m
+- Priemer filtra: 52 mm
+- Hmotnosť: 310 g
+
+Optika:
+Ostrý obraz a prirodzené vykreslenie detailov.
+
+Zaostrovanie:
+Rýchle a tiché automatické zaostrovanie.
+
+Kompatibilita:
+Kompatibilné s fotoaparátmi SHUTERA Full Frame.
+
+------------------------------------------
+SHUTERA 50mm F1.4
+299 €
+------------------------------------------
+
+Hlavné vlastnosti:
+- 50 mm
+- F1.4
+- Full Frame
+- autofocus
+
+Technické parametre:
+- Ohnisková vzdialenosť: 50 mm
+- Svetelnosť: F1.4
+- Minimálna zaostrovacia vzdialenosť: 0,40 m
+- Priemer filtra: 67 mm
+- Hmotnosť: 420 g
+
+Optika:
+Vysoká svetelnosť pre portrét a výraznú hĺbku ostrosti.
+
+Zaostrovanie:
+Presné automatické zaostrovanie.
+
+Kompatibilita:
+Kompatibilné s fotoaparátmi SHUTERA Full Frame.
+
+==================================================
+STATÍVY
+==================================================
+
+------------------------------------------
+SHUTERA Tripod Pro
+149 €
+------------------------------------------
+
+Hlavné vlastnosti:
+- profesionálna konštrukcia
+- nastaviteľná výška
+- guľová hlava
+
+Technické parametre:
+- Maximálna výška: 170 cm
+- Minimálna výška: 55 cm
+- Nosnosť: 8 kg
+- Materiál: hliníková zliatina
+- Hmotnosť: 1,6 kg
+- Typ hlavy: guľová
+
+Stabilita:
+Pevná konštrukcia pre stabilné fotografovanie.
+
+Nastavenie:
+Rýchle nastavenie výšky a polohy fotoaparátu.
+
+==================================================
+PAMÄŤOVÉ KARTY
+==================================================
+
+IMPORTANT:
+Create ONE product page called SHUTERA SD.
+
+Do not create separate pages for 128 GB, 256 GB and 512 GB.
+
+Use an interactive capacity selector.
+
+Display:
+
+Kapacita:
+
+[128 GB] [256 GB] [512 GB]
+
+When the user changes the capacity, change:
+- product image
+- price
+- capacity
+- technical specifications
+
+------------------------------------------
+128 GB
+19 €
+------------------------------------------
+
+- Kapacita: 128 GB
+- Čítanie: 170 MB/s
+- Zápis: 90 MB/s
+- Štandard: UHS-II
+- Video Class: V60
+
+------------------------------------------
+256 GB
+35 €
+------------------------------------------
+
+- Kapacita: 256 GB
+- Čítanie: 180 MB/s
+- Zápis: 100 MB/s
+- Štandard: UHS-II
+- Video Class: V60
+
+------------------------------------------
+512 GB
+59 €
+------------------------------------------
+
+- Kapacita: 512 GB
+- Čítanie: 190 MB/s
+- Zápis: 110 MB/s
+- Štandard: UHS-II
+- Video Class: V60
+
+==================================================
+EXTERNÉ SSD
+==================================================
+
+Create ONE product page:
+
+SHUTERA SSD
+
+Options:
+
+[1 TB] [2 TB]
+
+------------------------------------------
+1 TB
+89 €
+------------------------------------------
+
+- Kapacita: 1 TB
+- Rozhranie: USB-C
+- Čítanie: 1 050 MB/s
+- Zápis: 950 MB/s
+- Materiál: hliník
+- Hmotnosť: 95 g
+
+------------------------------------------
+2 TB
+149 €
+------------------------------------------
+
+- Kapacita: 2 TB
+- Rozhranie: USB-C
+- Čítanie: 1 050 MB/s
+- Zápis: 950 MB/s
+- Materiál: hliník
+- Hmotnosť: 100 g
+
+Changing the capacity must also change the product image.
+
+==================================================
+BATÉRIE
+==================================================
+
+Create ONE product page:
+
+SHUTERA Battery
+
+Options:
+
+[α1] [S1] [P1] [X1] [Z1]
+
+The selected camera model changes the product image, compatibility, capacity and price.
+
+------------------------------------------
+Battery α1
+39 €
+------------------------------------------
+
+- Kapacita: 2 200 mAh
+- Napätie: 7,2 V
+- Typ: Li-ion
+- Kompatibilita: SHUTERA α1
+- ochrana proti prebitiu
+- ochrana proti prehriatiu
+
+------------------------------------------
+Battery S1
+39 €
+------------------------------------------
+
+- Kapacita: 2 400 mAh
+- Napätie: 7,2 V
+- Typ: Li-ion
+- Kompatibilita: SHUTERA S1
+- ochrana proti prebitiu
+- ochrana proti prehriatiu
+
+------------------------------------------
+Battery X1
+49 €
+------------------------------------------
+
+- Kapacita: 2 600 mAh
+- Napätie: 7,4 V
+- Typ: Li-ion
+- Kompatibilita: SHUTERA X1
+- ochrana proti prebitiu
+- ochrana proti prehriatiu
+
+==================================================
+NABÍJAČKA
+==================================================
+
+SHUTERA Charger Pro
+
+29 €
+
+Technické parametre:
+- Rozhranie: USB-C
+- Výkon: 30 W
+- Vstup: 100–240 V
+- LED indikácia
+- ochrana proti prebitiu
+- ochrana proti prehriatiu
+
+Kompatibilita:
+
+[α1 / P1] [S1] [X1 / Z1]
+
+The selected compatibility option should update the relevant product information.
+
+==================================================
+TAŠKY A BATOHY
+==================================================
+
+------------------------------------------
+SHUTERA Camera Bag
+49 €
+------------------------------------------
+
+Hlavné vlastnosti:
+- kompaktná konštrukcia
+- polstrované priehradky
+- vodeodolný materiál
+
+Technické parametre:
+- Rozmery: 30 × 22 × 15 cm
+- Objem: 10 l
+- Hmotnosť: 650 g
+- Materiál: vodeodolný polyester
+
+Úložný priestor:
+Priestor pre fotoaparát, objektív, batérie a pamäťové karty.
+
+Ochrana:
+Polstrované priehradky chránia techniku pred nárazmi.
+
+------------------------------------------
+SHUTERA Camera Backpack
+89 €
+------------------------------------------
+
+Hlavné vlastnosti:
+- veľká kapacita
+- modulárne priehradky
+- ergonomický dizajn
+
+Technické parametre:
+- Objem: 22 l
+- Rozmery: 45 × 30 × 20 cm
+- Hmotnosť: 1,1 kg
+- Materiál: vodeodolný nylon
+
+Úložný priestor:
+Priestor pre fotoaparát, viacero objektívov, notebook a príslušenstvo.
+
+Komfort:
+Ergonomické popruhy pre pohodlné nosenie počas dlhšieho fotografovania.
+
+==================================================
+PRODUCT PAGE BEHAVIOR
+==================================================
+
+Every product must have its own product detail page.
+
+When the user clicks a product:
+- open its product page
+- automatically scroll to the very top
+- do not preserve the previous page scroll position
+
+Every product page must start from scroll position 0.
+
+For products with variants:
+- keep the user on the same product page
+- do not reload the entire page
+- dynamically change the image
+- dynamically change the price
+- dynamically change the specifications
+- highlight the selected option
+
+Example:
+
+SHUTERA SD
+
+[128 GB] [256 GB] [512 GB]
+
+Clicking 256 GB must immediately display:
+- 256 GB product image
+- 35 € price
+- 256 GB specifications
+
+The same system must work for:
+- memory cards
+- SSDs
+- batteries
+- lenses
+- chargers
+- bags and other products with variants.
+
+The product presentation should be clean, premium and spacious, with large product images, large typography and minimal unnecessary text.
