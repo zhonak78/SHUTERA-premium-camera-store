@@ -13,6 +13,7 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import NotFound from '@/pages/not-found';
 import {
   ArrowDown,
+  ArrowLeft,
   ArrowRight,
   Check,
   ChevronDown,
@@ -318,14 +319,21 @@ function Home() {
               ['Videokamery', 'products'],
               ['Objektívy', 'products'],
               ['Príslušenstvo', 'products'],
-              ['SHUTERA CLUB', 'club'],
+              ['SHUTERA CLUB', 'club-page'],
               ['Predajňe', 'stores'],
             ].map(([label, target]) => (
               <button
                 type="button"
                 data-testid={`link-nav-${label.toLowerCase().replaceAll(' ', '-')}`}
                 key={label}
-                onClick={() => scrollTo(target)}
+                onClick={() => {
+                  setMenuOpen(false);
+                  if (target === 'club-page') {
+                    setLocation('/club');
+                  } else {
+                    scrollTo(target);
+                  }
+                }}
                 className="nav-link"
               >
                 {label}
@@ -565,7 +573,7 @@ function Home() {
               <span className="section-kicker">SHUTERA CLUB / 03</span>
               <h2 className="display-font">Nie ste na to<br /><em>sami.</em></h2>
               <p>Stretnutia, skorý prístup a priestor pre otázky, ktoré sa nezmestia do manuálu.</p>
-              <button type="button" data-testid="button-join-club" className="light-cta" onClick={() => setNotice('Vitajte v poradovníku SHUTERA CLUB')}>
+              <button type="button" data-testid="button-join-club" className="light-cta" onClick={() => setLocation('/club')}>
                 Pridať sa do klubu <ArrowRight size={17} />
               </button>
             </div>
@@ -637,7 +645,7 @@ function Home() {
           <div className="search-results">
             {query && filteredProducts.length === 0 && <p className="empty-result">Nič sme nenašli. Skúste iný výraz.</p>}
             {query && filteredProducts.map((product) => <button type="button" data-testid={`button-search-result-${product.id}`} key={product.id} onClick={() => { setSearchOpen(false); setLocation(`/produkt/${product.id}`); }}><span>{product.name}</span><ArrowRight size={15} /></button>)}
-            {!query && <><span className="result-label">Skúste napríklad</span><button type="button" data-testid="button-search-s1" onClick={() => setQuery('S1')}>SHUTERA S1 <ArrowRight size={15} /></button><button type="button" data-testid="button-search-club" onClick={() => { setSearchOpen(false); scrollTo('club'); }}>SHUTERA CLUB <ArrowRight size={15} /></button></>}
+            {!query && <><span className="result-label">Skúste napríklad</span><button type="button" data-testid="button-search-s1" onClick={() => setQuery('S1')}>SHUTERA S1 <ArrowRight size={15} /></button><button type="button" data-testid="button-search-club" onClick={() => { setSearchOpen(false); setLocation('/club'); }}>SHUTERA CLUB <ArrowRight size={15} /></button></>}
           </div>
         </aside>
       )}
@@ -672,6 +680,10 @@ function ProductDetail() {
   const [, setLocation] = useLocation();
   const { addItem } = useCart();
   const [notice, setNotice] = useState('');
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [id]);
 
   if (!product) return <NotFound />;
 
@@ -771,12 +783,124 @@ function ProductDetail() {
   );
 }
 
+function ClubPage() {
+  const [, setLocation] = useLocation();
+  const [notice, setNotice] = useState('');
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
+  const joinClub = () => {
+    setNotice('Vitajte v poradovníku SHUTERA CLUB');
+    window.setTimeout(() => setNotice(''), 2600);
+  };
+
+  return (
+    <div className="noise club-page min-h-[100dvh] bg-[#f5f8fa] text-[#1d252e]">
+      <header className="club-page-header">
+        <button type="button" className="display-font club-page-logo" data-testid="button-club-logo" onClick={() => setLocation('/')}>
+          SHUTERA<span>.</span>
+        </button>
+        <div className="club-page-header-actions">
+          <span className="mono-font">SH / CLUB</span>
+          <button type="button" className="club-back-button" data-testid="button-club-back" onClick={() => setLocation('/')}>
+            <ArrowLeft size={15} /> Späť na SHUTERA
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <section className="club-page-hero">
+          <div className="club-page-hero-copy">
+            <span className="section-kicker">Členstvo / 01</span>
+            <h1 className="display-font">SHUTERA<br /><em>CLUB</em></h1>
+            <p className="club-page-subtitle">Čím viac nakupujete, tým viac ušetríte.</p>
+            <p className="club-page-intro">Staňte sa členom SHUTERA CLUB a získajte špeciálne výhody, zľavy a ponuky.</p>
+            <button type="button" className="primary-cta" data-testid="button-club-join-hero" onClick={joinClub}>
+              Stať sa členom <ArrowRight size={17} />
+            </button>
+          </div>
+          <div className="club-page-hero-art" aria-hidden="true">
+            <div className="club-orbit club-orbit-one" />
+            <div className="club-orbit club-orbit-two" />
+            <div className="club-orbit club-orbit-three" />
+            <div className="club-orbit-core"><span>SH</span></div>
+            <span className="club-art-label club-art-label-top mono-font">MEMBERSHIP / 001</span>
+            <span className="club-art-label club-art-label-bottom mono-font">ACCESS TO MORE</span>
+          </div>
+        </section>
+
+        <section id="club-levels" className="club-levels-section">
+          <div className="club-page-section-heading">
+            <div>
+              <span className="section-kicker">Členské úrovne / 02</span>
+              <h2 className="display-font">Viac členstva.<br /><em>Viac pre vás.</em></h2>
+            </div>
+            <p>Každý nákup vás posúva bližšie k výhodám, ktoré dávajú technológii ešte väčší zmysel.</p>
+          </div>
+          <div className="club-levels-grid">
+            <article className="club-level club-level-basic">
+              <div className="club-level-top"><span className="mono-font">01 / BASIC</span><span className="club-level-dot" /></div>
+              <div className="club-level-main"><h3 className="display-font">BASIC</h3><strong>5 %</strong><span>zľava</span></div>
+              <p>po registrácii do SHUTERA CLUB</p>
+              <ul><li>špeciálne ponuky</li><li>členské výhody</li></ul>
+            </article>
+            <article className="club-level club-level-pro">
+              <div className="club-level-top"><span className="mono-font">02 / PRO</span><span className="club-level-dot" /></div>
+              <div className="club-level-main"><h3 className="display-font">PRO</h3><strong>10 %</strong><span>zľava</span></div>
+              <p>pri nákupoch nad 500 €</p>
+              <ul><li>špeciálne ponuky</li><li>výhodnejšie ceny na vybrané produkty</li></ul>
+            </article>
+            <article className="club-level club-level-vip">
+              <div className="club-level-top"><span className="mono-font">03 / VIP</span><span className="club-level-dot" /></div>
+              <div className="club-level-main"><h3 className="display-font">VIP</h3><strong>15 %</strong><span>zľava</span></div>
+              <p>pri nákupoch nad 1 500 €</p>
+              <ul><li>VIP ponuky</li><li>prednostný prístup k novinkám</li><li>exkluzívne členské výhody</li></ul>
+            </article>
+          </div>
+        </section>
+
+        <section className="club-benefits-section">
+          <div className="club-benefits-intro">
+            <span className="section-kicker">Výhody SHUTERA CLUB / 03</span>
+            <h2 className="display-font">Keď viete,<br /><em>čo hľadáte.</em></h2>
+          </div>
+          <div className="club-benefits-list">
+            <div className="club-benefit"><span className="mono-font">01</span><div><h3 className="display-font">ČLENSKÉ ZĽAVY</h3><p>Získajte výhodnejšie ceny na vybrané produkty.</p></div><ArrowRight size={17} /></div>
+            <div className="club-benefit"><span className="mono-font">02</span><div><h3 className="display-font">ŠPECIÁLNE PONUKY</h3><p>Ponuky dostupné iba pre členov SHUTERA CLUB.</p></div><ArrowRight size={17} /></div>
+            <div className="club-benefit"><span className="mono-font">03</span><div><h3 className="display-font">NOVINKY AKO PRVÍ</h3><p>Prednostný prístup k novým produktom.</p></div><ArrowRight size={17} /></div>
+            <div className="club-benefit"><span className="mono-font">04</span><div><h3 className="display-font">VIP VÝHODY</h3><p>Exkluzívne výhody pre najvernejších zákazníkov.</p></div><ArrowRight size={17} /></div>
+          </div>
+        </section>
+
+        <section className="club-page-cta">
+          <span className="section-kicker">SHUTERA CLUB / 04</span>
+          <h2 className="display-font">Pripravení na<br /><em>viac?</em></h2>
+          <p>Vstúpte do SHUTERA CLUB.</p>
+          <button type="button" className="light-cta" data-testid="button-club-join-bottom" onClick={joinClub}>
+            Stať sa členom <ArrowRight size={17} />
+          </button>
+        </section>
+      </main>
+
+      <footer className="site-footer club-page-footer">
+        <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
+          <div className="footer-bottom"><span>© 2024 SHUTERA, s.r.o.</span><button type="button" onClick={() => setLocation('/')} data-testid="button-club-footer-back">Späť na katalóg</button><span>Slovensko / EUR</span></div>
+        </div>
+      </footer>
+      {notice && <div className="toast-notice" role="status" data-testid="status-club-notice"><Check size={16} /> {notice}</div>}
+    </div>
+  );
+}
+
 function Router() {
   return (
     // Keep a shared shell (sidebar, navbar) outside the boundary so it
     // survives a page crash.
     <RoutedErrorBoundary>
       <Switch>
+        <Route path="/club" component={ClubPage} />
         <Route path="/produkt/:id" component={ProductDetail} />
         <Route path="/" component={Home} />
         <Route component={NotFound} />

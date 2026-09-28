@@ -1,0 +1,178 @@
+PRÍSLUŠENSTVO — INDIVIDUÁLNE PRODUKTOVÉ STRÁNKY
+
+Do not use the same specification sections for every product.
+
+Every SHUTERA accessory must have its own relevant characteristics and technical parameters depending on the type of product.
+
+Do NOT use generic sections such as:
+
+Uzávierka
+Obrazová kvalita
+Senzor
+
+for accessories where these specifications are not relevant.
+
+Each product must have unique content.
+
+STATÍVY
+
+For a tripod use:
+
+01 — Hlavné vlastnosti
+Stabilita, nosnosť a jednoduché nastavenie.
+
+02 — Technické parametre
+Výška, maximálna nosnosť, materiál, hmotnosť.
+
+03 — Stabilita
+Pevná konštrukcia pre presné a stabilné zábery.
+
+04 — Nastavenie
+Rýchle nastavenie výšky a polohy.
+
+05 — Konštrukcia
+Odolné materiály navrhnuté na každodenné používanie.
+
+OBJEKTÍVY
+
+For lenses use:
+
+01 — Hlavné vlastnosti
+
+02 — Technické parametre
+Ohnisková vzdialenosť, svetelnosť, priemer filtra, minimálna zaostrovacia vzdialenosť.
+
+03 — Optika
+Ostrý obraz a prirodzené vykreslenie detailov.
+
+04 — Zaostrovanie
+Presné a rýchle zaostrovanie.
+
+05 — Kompatibilita
+Kompatibilita s fotoaparátmi SHUTERA.
+
+PAMÄŤOVÉ KARTY
+
+For memory cards use:
+
+01 — Hlavné vlastnosti
+
+02 — Technické parametre
+Kapacita, rýchlosť čítania, rýchlosť zápisu, formát.
+
+03 — Rýchlosť
+Rýchly zápis dát pre fotografovanie a video.
+
+04 — Kapacita
+Dostatok priestoru pre fotografie a video.
+
+05 — Spoľahlivosť
+Navrhnuté pre každodenné používanie.
+
+EXTERNÉ DISKY
+
+01 — Hlavné vlastnosti
+
+02 — Technické parametre
+Kapacita, typ pripojenia, rýchlosť čítania, rýchlosť zápisu.
+
+03 — Prenos dát
+Rýchly prenos veľkých fotografických a video súborov.
+
+04 — Kapacita
+Priestor pre rozsiahle projekty a archív.
+
+05 — Konštrukcia
+Kompaktné telo vhodné na prenášanie.
+
+BATÉRIE
+
+01 — Hlavné vlastnosti
+
+02 — Technické parametre
+Kapacita, napätie, kompatibilita, typ batérie.
+
+03 — Výdrž
+Energia pre dlhšie fotografovanie a natáčanie.
+
+04 — Kompatibilita
+Určené pre konkrétne modely SHUTERA.
+
+05 — Nabíjanie
+Efektívne a bezpečné nabíjanie.
+
+NABÍJAČKY
+
+01 — Hlavné vlastnosti
+
+02 — Technické parametre
+Vstup, výstup, kompatibilita, výkon.
+
+03 — Nabíjanie
+Rýchle a spoľahlivé nabíjanie batérií.
+
+04 — Bezpečnosť
+Ochrana proti prehriatiu a prebitiu.
+
+05 — Kompatibilita
+Kompatibilita s batériami SHUTERA.
+
+TAŠKY A BATOHY
+
+01 — Hlavné vlastnosti
+
+02 — Technické parametre
+Rozmery, objem, materiál, hmotnosť.
+
+03 — Úložný priestor
+Priestor pre fotoaparát, objektívy a príslušenstvo.
+
+04 — Ochrana
+Polstrované priehradky chránia techniku.
+
+05 — Komfort
+Pohodlné nosenie pri cestovaní a fotografovaní.
+
+DÔLEŽITÉ — KAŽDÝ PRODUKT SAMOSTATNE
+
+Every individual accessory must have its own unique product page.
+
+For example:
+
+SHUTERA Tripod Pro → its own page
+SHUTERA 128 GB Memory Card → its own page
+SHUTERA 1 TB External SSD → its own page
+SHUTERA Battery X1 → its own page
+
+Do not show the same text or specifications for different products.
+
+AUTOMATICALLY SCROLL TO THE TOP
+
+VERY IMPORTANT:
+
+Whenever the user clicks a product and opens a new product detail page, the page must automatically scroll to the very top.
+
+The user must always start the new product page from the beginning.
+
+Do not preserve the previous page's scroll position.
+
+When navigating to a product page, use smooth scrolling to the top:
+
+window.scrollTo({ top: 0, behavior: "smooth" })
+
+If the website uses routing/navigation, make sure the scroll position is reset every time a new product page is opened.
+
+This must work for:
+
+Fotoaparáty
+Profesionálne fotoaparáty
+Videokamery
+Objektívy
+Statívy
+Tašky a batohy
+Pamäťové karty
+Externé disky
+Batérie
+Nabíjačky
+
+Every product click → new product page → scroll position = 0.
