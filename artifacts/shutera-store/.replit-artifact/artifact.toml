@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "SHUTERA camera store"
+description = "A premium e-commerce storefront for SHUTERA cameras, video equipment, lenses and photography accessories."
+version = "1.0.0"
+id = "artifacts/shutera-store"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25206
+
+[services.development]
+run = "pnpm --filter @workspace/shutera-store run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/shutera-store", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/shutera-store/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25206"
+BASE_PATH = "/"
